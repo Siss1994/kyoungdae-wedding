@@ -145,9 +145,12 @@ section{padding:78px 30px}
 .loc .sub{text-align:center;font-size:12px;color:var(--mute);margin-top:7px}
 .loc .ad{text-align:center;font-size:12.5px;color:var(--mute);margin-top:8px}
 .btns{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.btn{height:50px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);
-  color:var(--forest);font-family:'Marcellus',serif;font-size:11px;letter-spacing:.18em;
+.btn{height:52px;display:flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--gold);color:var(--forest);
+  font-family:'Nanum Myeongjo',serif;font-size:14px;letter-spacing:.04em;
   text-decoration:none;transition:.24s}
+.btn .mi{width:19px;height:19px;flex:none;border-radius:5px}
+.btn.w{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.18em}
 .btn:active{background:var(--forest);color:var(--cream);border-color:var(--forest)}
 .btn.w{grid-column:span 2;border-style:dashed}
 .ways{margin-top:38px;display:grid;gap:2px}
@@ -313,8 +316,8 @@ section{padding:78px 30px}
     <div class="sub" data-rv="fade">2층 대성전</div>
     <div class="ad" data-rv="fade" data-w="venue.addr"></div>
     <div class="btns" data-rv="fade">
-      <a class="btn" data-w-href="venue.naver" target="_self">NAVER</a>
-      <a class="btn" data-w-href="venue.kakao" target="_self">KAKAO</a>
+      <a class="btn" data-w-href="venue.naver" target="_self"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.5" fill="#03C75A"/><path d="M13.58 12.32 10.2 7H7v10h3.32v-5.32L13.8 17H17V7h-3.42v5.32Z" fill="#fff"/></svg>네이버 지도</a>
+      <a class="btn" data-w-href="venue.kakao" target="_self"><svg class="mi" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5.5" fill="#FEE500"/><path d="M12 6.1c-3.64 0-6.6 2.31-6.6 5.16 0 1.83 1.22 3.44 3.05 4.35l-.72 2.67c-.06.23.2.41.4.28l3.13-2.07c.24.02.49.03.74.03 3.64 0 6.6-2.31 6.6-5.16S15.64 6.1 12 6.1Z" fill="#3C1E1E"/></svg>카카오 지도</a>
       <button class="btn w" data-w-copy="venue.copy" data-copy-msg="주소가 복사되었습니다">주소 복사</button>
     </div>
     <div class="ways">
@@ -372,34 +375,34 @@ section{padding:78px 30px}
   crossorigin="anonymous"></script>
 <script>
 /* ── 카카오톡 공유 ──────────────────────────────────────────
-   KAKAO_JS_KEY 를 발급받아 넣으면 "청첩장 보기" 버튼이 달린
-   예쁜 카드로 공유됩니다. 비워두면 자동으로 링크 복사로 대체됩니다.
-   발급: developers.kakao.com → 앱 만들기 → 앱 키 → JavaScript 키
-   플랫폼 등록: Web 사이트 도메인에 아래 SITE 주소 추가
+   카카오 디벨로퍼스에 등록한 메시지 템플릿(ID 137839)으로 공유합니다.
+   템플릿 내용(문구·이미지·버튼)은 카카오 콘솔에서 수정하면
+   코드 재배포 없이 바로 반영됩니다.
+   JS 키는 도메인 제한이 걸린 공개 키라 클라이언트 노출이 정상입니다.
    ───────────────────────────────────────────────────────── */
-var KAKAO_JS_KEY = '';
+var KAKAO_JS_KEY  = '708c685a5e5a92b0f63e21f6bf482e84';
+var KAKAO_TPL_ID  = 137839;
 var SITE = 'https://kyoungdae-yeaseul-20261212.wedding-card.pics';
 
-document.getElementById('kakaoShare').addEventListener('click', function () {
-  if (KAKAO_JS_KEY && window.Kakao) {
-    if (!Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY);
-    Kakao.Share.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '백경대 ♥ 김예슬, 결혼합니다',
-        description: '2026년 12월 12일 토요일 오후 4시\n서초동 성당 2층 대성전',
-        imageUrl: SITE + '/assets/img/og.jpg',
-        link: { mobileWebUrl: SITE + '/', webUrl: SITE + '/' }
-      },
-      buttons: [{ title: '청첩장 보기', link: { mobileWebUrl: SITE + '/', webUrl: SITE + '/' } }]
-    });
-    return;
-  }
-  // 키 미설정 시 폴백: 네이티브 공유 → 링크 복사
+function shareFallback() {
   if (navigator.share) {
-    navigator.share({ title: '백경대 ♥ 김예슬, 결혼합니다', url: SITE + '/' }).catch(function(){});
-  } else {
-    navigator.clipboard && navigator.clipboard.writeText(SITE + '/');
+    navigator.share({ title: '백경대 ♥ 김예슬, 결혼합니다', url: SITE + '/' }).catch(function () {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(SITE + '/').then(function () {
+      var t = document.getElementById('toast');
+      if (t) { t.textContent = '청첩장 링크가 복사되었습니다'; t.classList.add('is-on');
+               setTimeout(function () { t.classList.remove('is-on'); }, 1900); }
+    });
+  }
+}
+
+document.getElementById('kakaoShare').addEventListener('click', function () {
+  if (!window.Kakao || !KAKAO_JS_KEY) return shareFallback();
+  try {
+    if (!Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY);
+    Kakao.Share.sendCustom({ templateId: KAKAO_TPL_ID });
+  } catch (e) {
+    shareFallback();
   }
 });
 </script>
