@@ -1,0 +1,150 @@
+/* ============================================================
+   경대♥예슬 — 공용 코어 CSS (리셋 + 모션 프리미티브)
+   각 시안은 이 파일 뒤에 자기 미감만 덮어씁니다.
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;touch-action:pan-y;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;
+  word-break:keep-all;line-break:strict;overflow-wrap:break-word}
+body.is-locked{overflow:hidden;height:100vh}
+img{display:block;max-width:100%;pointer-events:none;-webkit-user-drag:none;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* 페이지 셸 */
+.shell{max-width:430px;margin:0 auto;position:relative;overflow:hidden}
+
+/* ── 등장 모션 프리미티브 ─────────────────────────────────── */
+.rv,[data-rv]{--d:.95s;--e:cubic-bezier(.16,1,.3,1)}
+[data-rv="up"]      {opacity:0;transform:translateY(26px)}
+[data-rv="up-sm"]   {opacity:0;transform:translateY(12px)}
+[data-rv="up-lg"]   {opacity:0;transform:translateY(52px)}
+[data-rv="down"]    {opacity:0;transform:translateY(-22px)}
+[data-rv="left"]    {opacity:0;transform:translateX(-30px)}
+[data-rv="right"]   {opacity:0;transform:translateX(30px)}
+[data-rv="fade"]    {opacity:0}
+[data-rv="scale"]   {opacity:0;transform:scale(.93)}
+[data-rv="scale-dn"]{opacity:0;transform:scale(1.09)}
+[data-rv="blur"]    {opacity:0;filter:blur(14px)}
+[data-rv="rise"]    {opacity:0;transform:translateY(34px) scale(.97)}
+.rv                 {opacity:0;transform:translateY(24px)}
+.rv,[data-rv]{transition:opacity var(--d) var(--e),transform var(--d) var(--e),filter var(--d) var(--e),clip-path var(--d) var(--e)}
+.rv.is-in,[data-rv].is-in{opacity:1;transform:none;filter:none}
+
+/* 마스크 와이프 */
+[data-rv="wipe-up"]   {clip-path:inset(100% 0 0 0)}
+[data-rv="wipe-down"] {clip-path:inset(0 0 100% 0)}
+[data-rv="wipe-left"] {clip-path:inset(0 100% 0 0)}
+[data-rv="wipe-right"]{clip-path:inset(0 0 0 100%)}
+[data-rv^="wipe"].is-in{clip-path:inset(0 0 0 0)}
+[data-rv^="wipe"]{transition-duration:1.25s}
+
+/* 사진 전용: 안쪽 이미지가 천천히 제자리로 */
+.ph{overflow:hidden;position:relative}
+.ph>img{transition:transform 1.6s cubic-bezier(.16,1,.3,1),filter 1.6s ease}
+[data-rv].ph>img{transform:scale(1.14)}
+[data-rv].ph.is-in>img{transform:scale(1)}
+
+/* 스태거 자식 */
+[data-stagger]>*{opacity:0;transform:translateY(18px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+[data-stagger].is-in>*{opacity:1;transform:none}
+
+/* 텍스트 분할 */
+[data-split]{display:inline-block}
+.sp-o{display:inline-block;overflow:hidden;vertical-align:top}
+.sp-i{display:inline-block;transform:translateY(105%);
+  transition:transform .9s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i) * 35ms)}
+.is-in .sp-i,[data-split].is-in .sp-i{transform:none}
+
+/* SVG 선 그리기 */
+[data-draw] path,[data-draw] line,[data-draw] circle,[data-draw] ellipse,[data-draw] polyline,[data-draw] rect{
+  transition:stroke-dashoffset 1.8s cubic-bezier(.3,.7,.2,1)}
+[data-draw].is-in path,[data-draw].is-in line,[data-draw].is-in circle,
+[data-draw].is-in ellipse,[data-draw].is-in polyline,[data-draw].is-in rect{stroke-dashoffset:0!important}
+
+/* 패럴랙스 */
+[data-parallax]{will-change:transform;transform:translate3d(0,var(--y,0),0)}
+
+/* 스크롤 진행 바 */
+[data-progress]{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60;pointer-events:none}
+[data-progress]::before{content:"";display:block;height:100%;width:100%;
+  transform-origin:0 50%;transform:scaleX(var(--p,0));background:currentColor;transition:transform .1s linear}
+
+/* 가로 레일 갤러리 */
+.rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 auto;scroll-snap-align:center}
+[data-rail-dots]{display:flex;gap:6px;justify-content:center}
+[data-rail-dots] i{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.22;transition:opacity .3s,width .3s}
+[data-rail-dots] i.is-on{opacity:.95;width:14px;border-radius:3px}
+[data-rail-dots].is-many{gap:3.5px}
+[data-rail-dots].is-many i{width:3.5px;height:3.5px}
+[data-rail-dots].is-many i.is-on{width:9px;border-radius:2px}
+
+/* 아코디언 */
+[data-acc]+*{max-height:0;overflow:hidden;transition:max-height .46s cubic-bezier(.3,.8,.3,1)}
+
+/* 탭 */
+[data-panel]{display:none}
+[data-panel].is-on{display:block}
+
+/* 인트로 커튼 */
+[data-intro]{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;
+  transition:opacity 1.1s ease,transform 1.3s cubic-bezier(.7,0,.3,1)}
+[data-intro].is-out{opacity:0;pointer-events:none}
+
+/* 토스트 */
+#toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,14px);z-index:99;
+  font-size:13px;letter-spacing:.02em;padding:13px 24px;border-radius:999px;
+  background:#1B1B18;color:#F6F2E8;opacity:0;pointer-events:none;transition:.32s cubic-bezier(.2,.8,.3,1);
+  box-shadow:0 10px 36px rgba(0,0,0,.26);max-width:86vw;text-align:center}
+#toast.is-on{opacity:1;transform:translate(-50%,0)}
+
+/* 그레인 오버레이 유틸 */
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E")}
+
+/* 아치 마스크 변형 */
+.arch-round {border-radius:50% 50% 4px 4px / 34% 34% 2% 2%}
+.arch-soft  {border-radius:50% 50% 8px 8px / 20% 20% 3% 3%}
+.arch-gothic{clip-path:path('M0 100 L0 46 Q0 20 50 0 Q100 20 100 46 L100 100 Z')}
+.arch-full  {border-radius:999px 999px 0 0}
+.lozenge    {border-radius:50% / 14%}
+.blob       {border-radius:62% 38% 44% 56% / 46% 58% 42% 54%}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,[data-rv],[data-stagger]>*,.sp-i,.ph>img{transition-duration:.01ms!important;
+    opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
+  [data-parallax]{transform:none!important}
+}
+
+
+/* ── 라이트박스 (줌 불가 · 가로 스와이프) ───────────────── */
+[data-lightbox] img{pointer-events:auto;cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(12,12,10,.96);
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+  display:flex;align-items:center;justify-content:center}
+.lb.is-on{opacity:1;pointer-events:auto}
+.lb-rail{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;scrollbar-width:none;touch-action:pan-x}
+.lb-rail::-webkit-scrollbar{display:none}
+.lb-rail figure{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;
+  display:flex;align-items:center;justify-content:center;padding:52px 14px 64px}
+.lb-rail img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+  pointer-events:none;-webkit-user-drag:none}
+.lb-x{position:absolute;top:14px;right:14px;z-index:2;width:42px;height:42px;
+  border-radius:50%;background:rgba(255,255,255,.1)}
+.lb-x::before,.lb-x::after{content:"";position:absolute;left:12px;top:20px;width:18px;height:1.5px;
+  background:#F2EADA}
+.lb-x::before{transform:rotate(45deg)}
+.lb-x::after{transform:rotate(-45deg)}
+.lb-n{position:absolute;bottom:26px;left:0;right:0;text-align:center;z-index:2;
+  font-size:12px;letter-spacing:.2em;color:rgba(242,234,218,.7)}
+
+  border:2px solid currentColor;pointer-events:none}

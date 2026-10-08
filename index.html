@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+
+<!-- ── 검색 노출 차단 (OG 스크래퍼는 영향 없음) ── -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- ── 기본 메타 ── -->
+<meta name="description" content="백경대 · 김예슬 결혼합니다. 2026년 12월 12일 토요일 오후 4시, 서초동 성당 2층 대성전.">
+<meta name="author" content="백경대 · 김예슬">
+<meta name="theme-color" content="#2A4739">
+<link rel="canonical" href="https://kyoungdae-yeaseul-20261212.wedding-card.pics/">
+
+<!-- ── Open Graph (카카오톡 · 페이스북 공유 카드) ── -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="백경대 ♥ 김예슬 모바일 청첩장">
+<meta property="og:title" content="백경대 ♥ 김예슬, 결혼합니다">
+<meta property="og:description" content="2026년 12월 12일 토요일 오후 4시&#10;서초동 성당 2층 대성전">
+<meta property="og:image" content="https://kyoungdae-yeaseul-20261212.wedding-card.pics/assets/img/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="백경대 · 김예슬 청첩장">
+<meta property="og:url" content="https://kyoungdae-yeaseul-20261212.wedding-card.pics/">
+<meta property="og:locale" content="ko_KR">
+
+<!-- ── Twitter / X ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="백경대 ♥ 김예슬, 결혼합니다">
+<meta name="twitter:description" content="2026년 12월 12일 토요일 오후 4시 · 서초동 성당 2층 대성전">
+<meta name="twitter:image" content="https://kyoungdae-yeaseul-20261212.wedding-card.pics/assets/img/og.jpg">
+
+<link rel="icon" href="assets/img/seal-dove.png">
+<link rel="apple-touch-icon" href="assets/img/seal-dove.png">
+<title>H — 봉투 열기 · 백경대 ♥ 김예슬</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Italianno&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="core.css">
+<style>
+:root{
+  --cream:#F2EADA; --cream2:#E8DEC9; --paper:#FAF5EA;
+  --wine:#7A2635; --wine2:#5C1A26; --forest:#2A4739; --gold:#B8955C;
+  --ink:#2B2721; --mute:#847B6C; --hair:rgba(43,39,33,.15);
+}
+body{background:var(--cream2);color:var(--ink);font-family:'Nanum Myeongjo',serif}
+.shell{background:var(--paper)}
+.ital{font-family:'Italianno',cursive}
+.mar{font-family:'Marcellus',serif;letter-spacing:.18em}
+
+section{padding:78px 30px}
+.lbl{text-align:center;font-family:'Italianno',cursive;font-size:38px;color:var(--wine);line-height:1}
+.lbl-ko{text-align:center;font-family:'Marcellus',serif;font-size:10px;letter-spacing:.4em;
+  color:var(--mute);margin-top:4px;text-transform:uppercase}
+.dv{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px auto 34px}
+.dv i{width:28px;height:1px;background:var(--gold)}
+.dv b{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+[data-progress]{color:var(--wine)}
+
+/* ══ 인트로: 봉투 ══ */
+.intro{background:linear-gradient(170deg,#1C2E26,#0F1C17)}
+.env-wrap{text-align:center;padding:0 30px}
+.env{width:260px;height:174px;margin:0 auto;position:relative;perspective:900px}
+.env .body{position:absolute;inset:0;background:var(--cream);
+  box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.env .card{position:absolute;left:11px;right:11px;top:9px;height:142px;background:var(--paper);
+  border:1px solid rgba(184,149,92,.5);display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:5px;transform:translateY(0);transition:transform 1s cubic-bezier(.3,.8,.3,1)}
+.env .card .t{font-family:'Italianno',cursive;font-size:30px;color:var(--wine)}
+.env .card .s{font-family:'Marcellus',serif;font-size:9px;letter-spacing:.3em;color:var(--mute)}
+.env .flapL,.env .flapR,.env .flapB{position:absolute;inset:0}
+.env .flapL{clip-path:polygon(0 0,0 100%,50% 52%);background:#E8DEC9}
+.env .flapR{clip-path:polygon(100% 0,100% 100%,50% 52%);background:#E8DEC9}
+.env .flapB{clip-path:polygon(0 100%,100% 100%,50% 50%);background:#EFE5D0}
+.env .flapT{position:absolute;left:0;right:0;top:0;height:92px;background:#EDE3CE;
+  clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;
+  transition:transform 1.1s cubic-bezier(.6,0,.3,1);z-index:4;
+  box-shadow:0 3px 8px rgba(0,0,0,.08)}
+.env .seal{position:absolute;left:50%;top:84px;
+  transform:translate(calc(-50% + 2px),calc(-50% + 2px));
+  width:50px;height:50px;z-index:5;pointer-events:none;
+  filter:drop-shadow(0 5px 12px rgba(0,0,0,.45));
+  transition:opacity .5s,transform .7s}
+.env .seal img{width:100%;height:100%;object-fit:contain}
+.intro.is-out .env .flapT{transform:rotateX(178deg)}
+.intro.is-out .env .seal{opacity:0;transform:translate(calc(-50% + 2px),calc(-50% + 2px)) scale(.6)}
+.intro.is-out .env .card{transform:translateY(-120px)}
+.env-msg{margin-top:40px;font-size:14px;letter-spacing:.14em;color:rgba(242,234,218,.84)}
+.env-btn{margin-top:20px;display:inline-flex;align-items:center;gap:9px;
+  font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:#F2EADA;
+  border:1px solid rgba(242,234,218,.4);padding:14px 30px;border-radius:999px;
+  transition:background .3s,color .3s}
+.env-btn:active{background:#F2EADA;color:#1C2E26}
+.env-sub{margin-top:16px;font-family:'Marcellus',serif;font-size:9px;letter-spacing:.28em;
+  color:rgba(242,234,218,.4)}
+
+/* ── 표지 ── */
+.cover{text-align:center;padding:52px 30px 56px;background:var(--paper);position:relative}
+.cover .top{font-family:'Marcellus',serif;font-size:10px;letter-spacing:.46em;color:var(--gold)}
+.cover .nm{margin-top:20px;font-family:'Italianno',cursive;font-size:62px;line-height:1.08;color:var(--wine)}
+.cover .ko{margin-top:8px;font-size:15px;letter-spacing:.3em;color:var(--mute)}
+.cover .fr{margin:30px auto 0;position:relative;max-width:286px}
+.cover .fr::before{content:"";position:absolute;inset:-9px;border:1px solid var(--gold);pointer-events:none}
+.cover .fr img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.cover .dt{margin-top:34px;font-size:13px;line-height:2.1;color:var(--mute);letter-spacing:.06em}
+
+/* ── 인사말 ── */
+.invite{background:var(--cream);text-align:center}
+.invite .body{font-size:15px;line-height:2.5}
+.fams{margin-top:44px;display:grid;gap:22px;font-size:14px;line-height:2;color:var(--mute)}
+.fams .t{display:block;font-family:'Marcellus',serif;font-size:9.5px;letter-spacing:.36em;color:var(--wine);margin-bottom:7px}
+.fams b{color:var(--forest);font-weight:700}
+.fams .big{font-size:19px;color:var(--ink);font-weight:700;letter-spacing:.08em}
+.fams .bap{font-size:11px;color:var(--gold);margin-left:4px}
+
+/* ── 날짜 ── */
+.when{text-align:center;background:var(--forest);color:var(--cream)}
+.when .lbl{color:var(--gold)}
+.when .lbl-ko{color:rgba(242,234,218,.5)}
+.when .seal2{width:120px;height:120px;margin:10px auto 0;border-radius:50%;
+  border:1px solid rgba(184,149,92,.6);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.when .seal2 .d{font-family:'Marcellus',serif;font-size:33px;line-height:1;letter-spacing:.03em}
+.when .ko{margin-top:28px;font-size:14.5px;line-height:2.1}
+.when .en{margin-top:12px;font-family:'Marcellus',serif;font-size:10px;letter-spacing:.24em;
+  color:rgba(242,234,218,.52);line-height:2}
+.when .dd{margin-top:28px;display:inline-block;font-family:'Marcellus',serif;font-size:11px;
+  letter-spacing:.3em;background:var(--gold);color:var(--forest);padding:9px 20px}
+
+/* ── 갤러리 ── */
+.gal{background:var(--paper)}
+.gal .rail{gap:12px;padding:0 30px;margin:0 -30px}
+.gal .rail figure{width:230px}
+.gal .rail img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--hair)}
+.gal .meta{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+.gal .meta span{font-family:'Marcellus',serif;font-size:9.5px;letter-spacing:.24em;color:var(--mute)}
+.gal .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:22px}
+.gal .grid img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.gal-hint{text-align:center;margin-top:20px;font-size:11.5px;letter-spacing:.04em;color:var(--mute)}
+
+/* ── 오시는 길 ── */
+.loc{background:var(--cream)}
+.church{display:block;width:186px;height:auto;margin:6px auto 22px;color:var(--forest);opacity:.84}
+.loc .nm{text-align:center;font-size:21px;font-weight:700;color:var(--forest);letter-spacing:.08em}
+.loc .sub{text-align:center;font-size:12px;color:var(--mute);margin-top:7px}
+.loc .ad{text-align:center;font-size:12.5px;color:var(--mute);margin-top:8px}
+.btns{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.btn{height:50px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);
+  color:var(--forest);font-family:'Marcellus',serif;font-size:11px;letter-spacing:.18em;
+  text-decoration:none;transition:.24s}
+.btn:active{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.btn.w{grid-column:span 2;border-style:dashed}
+.ways{margin-top:38px;display:grid;gap:2px}
+.way{border-top:1px solid var(--hair);padding:19px 0 5px}
+.way h4{font-family:'Marcellus',serif;font-size:10px;letter-spacing:.3em;color:var(--wine);margin-bottom:11px}
+.way p{font-size:12.8px;line-height:2.05;color:var(--mute)}
+.way p em{font-style:normal;color:var(--forest);font-weight:700}
+.way p.n{font-size:11.6px;color:#9A9282;margin-top:5px;line-height:1.9}
+
+/* ── 계좌 ── */
+.gift{background:var(--paper)}
+.acc{border:1px solid var(--hair);margin-bottom:9px;background:var(--cream)}
+.acc-h{width:100%;display:flex;align-items:center;justify-content:space-between;padding:17px 18px;
+  font-size:14px;letter-spacing:.1em;color:var(--forest)}
+.acc-h .pm{position:relative;width:11px;height:11px;flex:none}
+.acc-h .pm::before,.acc-h .pm::after{content:"";position:absolute;background:var(--wine);transition:transform .34s}
+.acc-h .pm::before{left:0;top:5px;width:11px;height:1px}
+.acc-h .pm::after{left:5px;top:0;width:1px;height:11px}
+.acc-h.is-open .pm::after{transform:scaleY(0)}
+.acc-in{padding:0 18px 16px}
+.acct{display:flex;align-items:center;justify-content:space-between;gap:11px;padding:14px 0;border-top:1px dotted var(--hair)}
+.acct .l{font-size:11.5px;color:var(--mute);line-height:1.7}
+.acct .l b{display:block;font-family:'Marcellus',serif;font-size:15px;letter-spacing:.06em;color:var(--ink);margin:3px 0}
+.acct .c{flex:none;font-family:'Marcellus',serif;font-size:9.5px;letter-spacing:.2em;padding:8px 13px;
+  border:1px solid var(--hair);color:var(--forest)}
+.acct .c:active{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+
+/* ── 맺음 ── */
+.end{background:var(--wine2);color:var(--cream);text-align:center;padding:66px 30px 58px}
+.end .msg{font-size:13.5px;line-height:2.3;opacity:.9}
+.end .msg b{color:#E8C98F;font-weight:700}
+.end .msg.meal{margin-top:24px;padding-top:22px;border-top:1px solid rgba(242,234,218,.22);
+  font-size:12.6px;opacity:.8;line-height:2.1}
+.share-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:30px}
+.share-btn{height:48px;border:1px solid rgba(232,201,143,.45);color:#E8C98F;
+  font-family:'Nanum Myeongjo',serif;font-size:13px;letter-spacing:.04em;transition:.24s}
+.share-btn:active{background:#E8C98F;color:var(--wine2)}
+.share-btn.alt{border-style:dashed}
+.end .sig{margin-top:34px;font-family:'Italianno',cursive;font-size:44px;color:#E8C98F;line-height:1}
+.end .dt{margin-top:10px;font-family:'Marcellus',serif;font-size:10px;letter-spacing:.38em;opacity:.5}
+
+#toast{background:var(--forest);color:var(--cream);font-family:'Nanum Myeongjo',serif}
+</style>
+</head>
+<body>
+<div data-progress></div>
+
+<!-- 인트로 봉투 -->
+<div class="intro" data-intro>
+  <div class="env-wrap">
+    <div class="env">
+      <div class="body"></div>
+      <div class="card"><span class="t">Invitation</span><span class="s">BAEK &amp; KIM</span></div>
+      <div class="flapL"></div><div class="flapR"></div><div class="flapB"></div>
+      <div class="flapT"></div>
+      <div class="seal"><img src="assets/img/seal-dove.png" alt=""></div>
+    </div>
+    <p class="env-msg">초대장이 도착했습니다</p>
+    <button class="env-btn" data-intro-open>봉투 열기</button>
+    <p class="env-sub">TAP TO OPEN</p>
+  </div>
+</div>
+
+<div class="shell grain">
+
+  <header class="cover">
+    <div class="top">WEDDING INVITATION</div>
+    <div class="nm">Kyoungdae &amp; Yeaseul</div>
+    <div class="ko">백경대 · 김예슬</div>
+    <div class="fr ph" data-rv="scale"><img src="assets/photos/photo-08.jpg" alt=""></div>
+    <div class="dt" data-rv="fade">2026년 12월 12일 토요일 오후 4시<br>서초동 성당 2층 대성전</div>
+  </header>
+
+  <section class="invite">
+    <div class="lbl">Invitation</div><div class="lbl-ko">초대합니다</div>
+    <div class="dv"><i></i><b></b><i></i></div>
+    <p class="body" data-rv="up" data-w="greet.htmlNarrow" data-w-html></p>
+    <div class="fams" data-rv="up" data-stagger="120">
+      <div><span class="t">GROOM</span><b>유환영</b><span class="bap">의</span><br>차남 <span class="big">백경대</span><span class="bap">토마스</span></div>
+      <div><span class="t">BRIDE</span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br>차녀 <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
+    </div>
+  </section>
+
+  <section class="when">
+    <div class="lbl">The Date</div><div class="lbl-ko">예식일</div>
+    <div class="seal2" data-rv="scale"><div class="d">12.12</div></div>
+    <p class="ko" data-rv="fade" data-w="date.ko"></p>
+    <p class="en" data-rv="fade">SATURDAY, DECEMBER 12, 2026 · 4:00 PM<br>SEOCHO CATHOLIC CHURCH, SEOUL</p>
+    <div class="dd" data-rv="fade" data-dday></div>
+  </section>
+
+  <section class="gal">
+    <div class="lbl">Gallery</div><div class="lbl-ko">사진첩</div>
+    <div class="dv"><i></i><b></b><i></i></div>
+    <div data-lightbox>
+    <div class="rail" data-rail>
+      <figure><img src="assets/thumbs/photo-08.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-01.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-05.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-14.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-09.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-18.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-04.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-12.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-19.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-15.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-17.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-11.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-10.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-07.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-16.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-20.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-02.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-13.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-03.jpg" alt=""></figure>
+      <figure><img src="assets/thumbs/photo-06.jpg" alt=""></figure>
+    </div>
+    <div class="meta"><span data-rail-count></span><div data-rail-dots style="color:var(--wine)"></div><span>SWIPE →</span></div>
+    <div class="grid">
+      <img src="assets/thumbs/photo-04.jpg" alt=""><img src="assets/thumbs/photo-12.jpg" alt=""><img src="assets/thumbs/photo-19.jpg" alt="">
+      <img src="assets/thumbs/photo-15.jpg" alt=""><img src="assets/thumbs/photo-17.jpg" alt=""><img src="assets/thumbs/photo-11.jpg" alt="">
+    </div>
+    </div>
+    <p class="gal-hint">사진을 누르면 크게 볼 수 있습니다 · 옆으로 넘겨보세요</p>
+  </section>
+
+  <section class="loc">
+    <div class="lbl">Directions</div><div class="lbl-ko">오시는 길</div>
+    <div class="dv"><i></i><b></b><i></i></div>
+    <svg class="church" viewBox="0 0 210 164" fill="none" stroke="currentColor"
+         stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" data-draw>
+      <!-- 종탑 : 벽 2개 (오른쪽 벽은 본당과 공유) -->
+      <path d="M30.5 145C30.2 117 30.2 89 30.5 62"/>
+      <path d="M64 145C63.7 117 63.7 89 64 62"/>
+      <!-- 종탑 지붕(첨탑) -->
+      <path d="M26 62 47.2 21.5 68 62"/>
+      <!-- 십자가 -->
+      <path d="M47.2 21.5C47.3 16.6 47.3 11.8 47.2 7"/>
+      <path d="M40.4 12.6C44.9 12.4 49.6 12.4 54 12.6"/>
+      <!-- 종탑 창 -->
+      <path d="M40.6 101V84.5c0-3.8 2.9-6.7 6.6-6.7s6.6 2.9 6.6 6.7V101"/>
+      <!-- 본당 지붕 : 종탑 오른쪽 벽에서 시작 → 겹침 없음 -->
+      <path d="M64 80.5 121.5 52 181 80.5"/>
+      <!-- 본당 오른쪽 벽 -->
+      <path d="M176 145C176.2 123 176.2 102 176 80.5"/>
+      <!-- 장미창 -->
+      <circle cx="121.5" cy="79" r="10.2"/>
+      <path d="M121.5 68.8v20.4M111.3 79h20.4"/>
+      <path d="M114.3 71.8l14.4 14.4M128.7 71.8l-14.4 14.4"/>
+      <!-- 정문 아치 -->
+      <path d="M108.5 145v-24.5c0-7.2 5.8-13 13-13s13 5.8 13 13V145"/>
+      <path d="M121.5 107.5c.1 12.5.1 25 0 37.5"/>
+      <!-- 측창 : 바닥에서 띄움 -->
+      <path d="M85 138v-16c0-3.6 2.9-6.5 6.5-6.5S98 118.4 98 122v16"/>
+      <path d="M145 138v-16c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5v16"/>
+      <!-- 계단 -->
+      <path d="M100 145c14.3-.4 28.7-.4 43 0"/>
+      <path d="M94 149.5c18.3-.5 36.7-.5 55 0"/>
+      <!-- 지면 -->
+      <path d="M18 153.5c36-1.7 72-2.3 108-2.3s69 .6 102 2.3" opacity=".5"/>
+    </svg>
+    <div class="nm" data-rv="up">서초동 성당</div>
+    <div class="sub" data-rv="fade">2층 대성전</div>
+    <div class="ad" data-rv="fade" data-w="venue.addr"></div>
+    <div class="btns" data-rv="fade">
+      <a class="btn" data-w-href="venue.naver" target="_self">NAVER</a>
+      <a class="btn" data-w-href="venue.kakao" target="_self">KAKAO</a>
+      <button class="btn w" data-w-copy="venue.copy" data-copy-msg="주소가 복사되었습니다">주소 복사</button>
+    </div>
+    <div class="ways">
+      <div class="way" data-rv="up"><h4>SUBWAY</h4>
+        <p><em>2·3호선 교대역 1번 출구</em> 직진 → 경부고속도로 굴다리(서초1교) 전 횡단보도 우측 골목 300m → 서초현대3차 APT 앞 (도보 10~15분)</p>
+        <p class="n">※ 마을버스 : 교대역 2호선 2·5번, 3호선 13번 출구 → 03번 → 성당 앞 하차<br>※ 강남역 8번 출구 도보 10분</p></div>
+      <div class="way" data-rv="up"><h4>BUS</h4>
+        <p><em>창신교회 앞</em> 하차 — 144 · 350 (간선)<br><em>유원아파트</em> 하차 — 740 (간선)</p></div>
+      <div class="way" data-rv="up"><h4>VILLAGE BUS</h4>
+        <p>03번 신사역→교대역 : 창신교회 하차<br>03번 교대역→신사역 : 서초동성당 · 삼성레포츠 하차<br>21번 창신교회 하차 · 10번 유원아파트 하차</p></div>
+    </div>
+  </section>
+
+  <section class="gift">
+    <div class="lbl">With Heart</div><div class="lbl-ko">마음 전하실 곳</div>
+    <div class="dv"><i></i><b></b><i></i></div>
+    <div class="acc">
+      <button class="acc-h" data-acc aria-expanded="false">신랑측 계좌번호<span class="pm"></span></button>
+      <div><div class="acc-in">
+        <div class="acct"><div class="l">우리은행 · 어머니 유환영<b>117-097844-12-001</b></div>
+          <button class="c" data-copy="우리은행 117-097844-12-001 유환영" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
+        <div class="acct"><div class="l">우리은행 · 신랑 백경대<b>1002-658-016582</b></div>
+          <button class="c" data-copy="우리은행 1002-658-016582 백경대" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
+      </div></div>
+    </div>
+    <div class="acc">
+      <button class="acc-h" data-acc aria-expanded="false">신부측 계좌번호<span class="pm"></span></button>
+      <div><div class="acc-in">
+        <div class="acct"><div class="l">우리은행 · 아버지 김영환<b>407-053747-02-101</b></div>
+          <button class="c" data-copy="우리은행 407-053747-02-101 김영환" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
+        <div class="acct"><div class="l">국민은행 · 어머니 김석자<b>130-21-0064-251</b></div>
+          <button class="c" data-copy="국민은행 130-21-0064-251 김석자" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
+        <div class="acct"><div class="l">카카오뱅크 · 신부 김예슬<b>3333-04-6209726</b></div>
+          <button class="c" data-copy="카카오뱅크 3333-04-6209726 김예슬" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="end">
+    <p class="msg" data-rv="up" data-w="notice.html" data-w-html></p>
+    <p class="msg meal" data-rv="up" data-w="meal.html" data-w-html></p>
+    <div class="share-row">
+      <button class="share-btn" id="kakaoShare">카카오톡으로 공유하기</button>
+      <button class="share-btn alt" data-copy="https://kyoungdae-yeaseul-20261212.wedding-card.pics/" data-copy-msg="청첩장 링크가 복사되었습니다">링크 복사</button>
+    </div>
+    <div class="sig" data-rv="fade">Thank you</div>
+    <div class="dt" data-rv="fade">2026 . 12 . 12</div>
+  </footer>
+
+</div>
+<script src="data.js"></script>
+<script src="core.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
+  integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6"
+  crossorigin="anonymous"></script>
+<script>
+/* ── 카카오톡 공유 ──────────────────────────────────────────
+   KAKAO_JS_KEY 를 발급받아 넣으면 "청첩장 보기" 버튼이 달린
+   예쁜 카드로 공유됩니다. 비워두면 자동으로 링크 복사로 대체됩니다.
+   발급: developers.kakao.com → 앱 만들기 → 앱 키 → JavaScript 키
+   플랫폼 등록: Web 사이트 도메인에 아래 SITE 주소 추가
+   ───────────────────────────────────────────────────────── */
+var KAKAO_JS_KEY = '';
+var SITE = 'https://kyoungdae-yeaseul-20261212.wedding-card.pics';
+
+document.getElementById('kakaoShare').addEventListener('click', function () {
+  if (KAKAO_JS_KEY && window.Kakao) {
+    if (!Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY);
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '백경대 ♥ 김예슬, 결혼합니다',
+        description: '2026년 12월 12일 토요일 오후 4시\n서초동 성당 2층 대성전',
+        imageUrl: SITE + '/assets/img/og.jpg',
+        link: { mobileWebUrl: SITE + '/', webUrl: SITE + '/' }
+      },
+      buttons: [{ title: '청첩장 보기', link: { mobileWebUrl: SITE + '/', webUrl: SITE + '/' } }]
+    });
+    return;
+  }
+  // 키 미설정 시 폴백: 네이티브 공유 → 링크 복사
+  if (navigator.share) {
+    navigator.share({ title: '백경대 ♥ 김예슬, 결혼합니다', url: SITE + '/' }).catch(function(){});
+  } else {
+    navigator.clipboard && navigator.clipboard.writeText(SITE + '/');
+  }
+});
+</script>
+</body>
+</html>
