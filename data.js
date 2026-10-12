@@ -18,9 +18,9 @@ window.WED = {
     kakao:'https://map.kakao.com/?q=%EC%84%9C%EC%B4%88%EB%8F%99%EC%84%B1%EB%8B%B9'
   },
   groom:{ ko:'백경대', bap:'토마스', en:'Kyoungdae Baek', enFirst:'Kyoungdae',
-    rel:'차남', father:'', fatherBap:'', mother:'유환영', motherBap:'' },
+    rel:'아들', father:'', fatherBap:'', mother:'유환영', motherBap:'' },
   bride:{ ko:'김예슬', bap:'소화데레사', en:'Yeaseul Kim', enFirst:'Yeaseul',
-    rel:'차녀', father:'김영환', fatherBap:'요셉', mother:'김석자', motherBap:'마리아' },
+    rel:'딸', father:'김영환', fatherBap:'요셉', mother:'김석자', motherBap:'마리아' },
   greet:{
     title:'초대합니다',
     lines:['각자의 시간을 걸어온 두 사람이 만나','이제는 함께 시간이라는 여행을 시작하려 합니다.','',
