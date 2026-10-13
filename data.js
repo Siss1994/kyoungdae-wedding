@@ -61,7 +61,7 @@ window.WED = {
   },
 
   parkingNote:{
-    html:'서초동성당 주차장 무료 주차'
+    html:'서초동성당 주차장 <mark>무료 주차</mark>'
   },
   giftNote:{
     html:'함께하지 못해 아쉬운 마음은 있지만<br>멀리서 보내주시는 축하도 소중히 간직하겠습니다.<br><br>'

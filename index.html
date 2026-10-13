@@ -104,6 +104,9 @@ section{padding:78px 30px}
 .cover .fr::before{content:"";position:absolute;inset:-9px;border:1px solid var(--gold);pointer-events:none}
 .cover .fr img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .cover .dt{margin-top:34px;font-size:17px;font-weight:700;line-height:2.1;color:var(--ink);letter-spacing:.06em}
+.cover .dt .sat{color:#2B5C8A}
+.cover .dt .ch-mini{display:inline-block;width:19px;height:15px;vertical-align:-2px;
+  margin-right:6px;color:var(--forest);opacity:.85}
 
 /* ── 인사말 ── */
 .invite{background:var(--cream);text-align:center}
@@ -160,10 +163,16 @@ section{padding:78px 30px}
 .way h4{display:flex;align-items:center;gap:8px;font-family:'Marcellus',serif;font-size:13px;
   letter-spacing:.3em;color:var(--wine);margin-bottom:11px}
 .way h4 .wi{width:19px;height:19px;flex:none;color:var(--forest)}
+.way p mark{background:rgba(195,160,99,.3);color:var(--ink);
+  padding:2px 6px;border-radius:3px;font-weight:700}
 .way h4 .ko{font-family:'Nanum Myeongjo',serif;font-size:12.5px;letter-spacing:.06em;color:var(--mute)}
-.way p{font-size:15.8px;font-weight:700;line-height:2.05;color:var(--ink)}
+.way p{font-size:15.8px;font-weight:700;line-height:2.1;color:var(--ink)}
+.way p.route{display:grid;gap:9px}
+.way p.route > span{display:block;padding-left:22px;text-indent:-22px;line-height:1.75}
+.way p.route i{font-style:normal;display:inline-block;width:22px;text-indent:0;color:var(--forest)}
+.way p.route small{font-size:14px;font-weight:400;color:var(--mute)}
 .way p em{font-style:normal;color:var(--forest);font-weight:700}
-.way p.n{font-size:13.6px;font-weight:400;color:var(--ink);margin-top:5px;line-height:1.9}
+.way p.n{font-size:13.6px;font-weight:400;color:var(--ink);margin-top:12px;line-height:1.95}
 
 /* ── 계좌 ── */
 .gift{background:var(--paper)}
@@ -231,7 +240,7 @@ section{padding:78px 30px}
     <div class="nm">Kyoungdae &amp; Yeaseul</div>
     <div class="ko">백경대 · 김예슬</div>
     <div class="fr ph" data-rv="scale"><img src="assets/photos/photo-08.jpg" alt=""></div>
-    <div class="dt" data-rv="fade">2026년 12월 12일 토요일 오후 4시<br>서초동 성당 2층 대성전</div>
+    <div class="dt" data-rv="fade">2026년 12월 12일 <span class="sat">토요일</span> 오후 4시<br><svg class="ch-mini" viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.3 21.4V9.3M11.2 21.4V9.3"/><path d="M2.9 9.3 7.75 2.9 12.6 9.3"/><path d="M7.75 2.9V.9M6.2 1.9h3.1"/><path d="M11.2 11.3 19.4 6.6l8.2 4.7"/><path d="M26.4 21.4V11.6"/><circle cx="19.4" cy="12.6" r="1.5"/><path d="M16.9 21.4v-3.1a2.5 2.5 0 0 1 5 0v3.1"/><path d="M2.2 21.6h25.6"/></svg>서초동 성당 2층 대성전</div>
   </header>
 
   <section class="invite">
@@ -331,14 +340,14 @@ section{padding:78px 30px}
       <button class="btn w" data-w-copy="venue.copy" data-copy-msg="주소가 복사되었습니다">주소 복사</button>
     </div>
     <div class="ways">
-      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="13" rx="3.5"/><path d="M5 9.5h14"/><circle cx="8.6" cy="12.8" r="1"/><circle cx="15.4" cy="12.8" r="1"/><path d="M9 19l-2 2M15 19l2 2M7.5 16v3M16.5 16v3"/></svg>SUBWAY <span class="ko">지하철</span></h4>
-        <p><em>2·3호선 교대역 1번 출구</em> 직진 →<br>경부고속도로 굴다리(서초1교) 전 횡단보도 우측 골목 300m →<br>서초현대3차 APT 앞 (도보 10~15분)</p>
-        <p class="n">※ 마을버스 : 교대역 2호선 2·5번, 3호선 13번 출구 → 03번 → 성당 앞 하차<br>※ 강남역 8번 출구 도보 10분</p></div>
-      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2.5"/><path d="M4 9.5h16M4 13h16"/><circle cx="7.5" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/><path d="M6 16v1.6M18 16v1.6"/></svg>BUS <span class="ko">버스</span></h4>
+      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="13" rx="3.5"/><path d="M5 9.5h14"/><circle cx="8.6" cy="12.8" r="1"/><circle cx="15.4" cy="12.8" r="1"/><path d="M9 19l-2 2M15 19l2 2M7.5 16v3M16.5 16v3"/></svg>SUBWAY <span class="ko">(지하철)</span></h4>
+        <p class="route"><span><em>2·3호선 교대역 1번 출구</em> 직진</span><span><i>→</i>경부고속도로 굴다리(서초1교) 전<br>횡단보도 우측 골목 300m</span><span><i>→</i>서초현대3차 APT 앞 <small>(도보 10~15분)</small></span></p>
+        <p class="n">※ 마을버스 : 교대역 2호선 2·5번, 3호선 13번 출구<br>&nbsp;&nbsp;&nbsp;→ 03번 → 성당 앞 하차<br>※ 강남역 8번 출구 도보 10분</p></div>
+      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2.5"/><path d="M4 9.5h16M4 13h16"/><circle cx="7.5" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/><path d="M6 16v1.6M18 16v1.6"/></svg>BUS <span class="ko">(버스)</span></h4>
         <p><em>창신교회 앞</em> 하차 — 144 · 350 (간선)<br><em>유원아파트</em> 하차 — 740 (간선)</p></div>
       <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V8.5c0-1.4 1.1-2.5 2.5-2.5H15l4 4.5V16"/><path d="M3 11.5h16"/><circle cx="7" cy="18" r="1.7"/><circle cx="16" cy="18" r="1.7"/><path d="M8.7 18h5.6M3 18h2M19 18h2"/></svg>VILLAGE BUS <span class="ko">(마을버스)</span></h4>
         <p>03번 신사역→교대역 : 창신교회 하차<br>03번 교대역→신사역 : 서초동성당 · 삼성레포츠 하차<br>21번 창신교회 하차 · 10번 유원아파트 하차</p></div>
-      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14.5v-1.2a2 2 0 0 1 .3-1l1.6-2.6A3 3 0 0 1 7.5 8.2h9a3 3 0 0 1 2.6 1.5l1.6 2.6a2 2 0 0 1 .3 1v1.2"/><path d="M3 14.5h18v3a1 1 0 0 1-1 1h-1.6a1 1 0 0 1-1-1v-.6H6.6v.6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7" cy="16.4" r=".7"/><circle cx="17" cy="16.4" r=".7"/></svg>PARKING <span class="ko">주차</span></h4>
+      <div class="way" data-rv="up"><h4><svg class="wi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14.5v-1.2a2 2 0 0 1 .3-1l1.6-2.6A3 3 0 0 1 7.5 8.2h9a3 3 0 0 1 2.6 1.5l1.6 2.6a2 2 0 0 1 .3 1v1.2"/><path d="M3 14.5h18v3a1 1 0 0 1-1 1h-1.6a1 1 0 0 1-1-1v-.6H6.6v.6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7" cy="16.4" r=".7"/><circle cx="17" cy="16.4" r=".7"/></svg>PARKING <span class="ko">(주차)</span></h4>
         <p data-w="parkingNote.html" data-w-html></p></div>
     </div>
   </section>
