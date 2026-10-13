@@ -62,17 +62,15 @@ section{padding:78px 30px}
 .intro{background:linear-gradient(170deg,#1C2E26,#0F1C17)}
 .env-wrap{text-align:center;padding:0 30px}
 .env{width:260px;height:174px;margin:0 auto;position:relative;perspective:900px;
-  cursor:pointer;animation:envNudge 2.6s ease-in-out infinite;transform-origin:50% 88%}
+  cursor:pointer;animation:envSway 3.8s ease-in-out infinite;transform-origin:50% 88%}
 .env:active{animation:none;transform:scale(.975)}
 .intro.is-out .env{animation:none}
-@keyframes envNudge{
-  0%,62%,100%{transform:rotate(0deg) translateY(0) scale(1)}
-  66%{transform:rotate(-4.5deg) translateY(-7px) scale(1.02)}
-  72%{transform:rotate(3.8deg)  translateY(-5px) scale(1.02)}
-  78%{transform:rotate(-2.8deg) translateY(-3px) scale(1.01)}
-  84%{transform:rotate(1.8deg)  translateY(-2px)}
-  90%{transform:rotate(-1deg)   translateY(-1px)}
-  95%{transform:rotate(.4deg)}
+@keyframes envSway{
+  0%  {transform:rotate(-1.6deg) translateY(0)}
+  25% {transform:rotate(-.2deg)  translateY(-2.5px)}
+  50% {transform:rotate(1.6deg)  translateY(0)}
+  75% {transform:rotate(.2deg)   translateY(-2.5px)}
+  100%{transform:rotate(-1.6deg) translateY(0)}
 }
 @media (prefers-reduced-motion:reduce){.env{animation:none}}
 .env .body{position:absolute;inset:0;background:var(--cream);
@@ -127,6 +125,8 @@ section{padding:78px 30px}
 .invite .body em{font-style:normal;font-weight:700;color:var(--wine2)}
 .fams{margin-top:44px;display:grid;gap:22px;font-size:16px;line-height:2;color:var(--mute)}
 .fams .t{display:block;font-family:'Marcellus',serif;font-size:11.5px;letter-spacing:.36em;color:var(--wine);margin-bottom:7px}
+.fams .t{display:flex;align-items:center;justify-content:center;gap:7px}
+.fams .t .fi{width:21px;height:21px;flex:none;color:var(--forest)}
 .fams .t i{font-family:'Nanum Myeongjo',serif;font-style:normal;font-size:11.5px;
   letter-spacing:.04em;color:var(--mute)}
 .fams b{font-size:21px;color:var(--ink);font-weight:700;letter-spacing:.08em}
@@ -272,8 +272,8 @@ section{padding:78px 30px}
     <div class="dv"><i></i><b></b><i></i></div>
     <p class="body" data-rv="up" data-w="greet.htmlNarrow" data-w-html></p>
     <div class="fams" data-rv="up" data-stagger="120">
-      <div><span class="t">GROOM <i>(신랑)</i></span><b>유환영</b><span class="bap">의</span><br><span class="rel">아들</span> <span class="big">백경대</span><span class="bap">토마스</span></div>
-      <div><span class="t">BRIDE <i>(신부)</i></span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br><span class="rel">딸</span> <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
+      <div><span class="t"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.2 9.4 3.4 6.6c-.6-.3-1.3.2-1.3.9v9c0 .7.7 1.2 1.3.9l6.8-2.8Z"/><path d="M13.8 9.4l6.8-2.8c.6-.3 1.3.2 1.3.9v9c0 .7-.7 1.2-1.3.9l-6.8-2.8Z"/><rect x="10" y="8.6" width="4" height="6.8" rx="1.3"/></svg>GROOM <i>(신랑)</i></span><b>유환영</b><span class="bap">의</span><br><span class="rel">아들</span> <span class="big">백경대</span><span class="bap">토마스</span></div>
+      <div><span class="t"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.4" r="3.6"/><path d="M4.6 18.6C3.4 10.4 6.8 4.2 12 4.2s8.6 6.2 7.4 14.4"/><path d="M12 2.6v1.6"/></svg>BRIDE <i>(신부)</i></span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br><span class="rel">딸</span> <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
     </div>
   </section>
 
