@@ -51,7 +51,7 @@ body{background:var(--cream2);color:var(--ink);font-family:'Nanum Myeongjo',seri
 
 section{padding:78px 30px}
 .lbl{text-align:center;font-family:'Italianno',cursive;font-size:40px;color:var(--wine);line-height:1}
-.lbl-ko{text-align:center;font-family:'Marcellus',serif;font-size:12px;letter-spacing:.4em;
+.lbl-ko{text-align:center;font-family:'Nanum Myeongjo',serif;font-size:15px;font-weight:700;letter-spacing:.4em;
   color:var(--mute);margin-top:4px;text-transform:uppercase}
 .dv{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px auto 34px}
 .dv i{width:28px;height:1px;background:var(--gold)}
@@ -99,11 +99,11 @@ section{padding:78px 30px}
 .cover{text-align:center;padding:52px 30px 56px;background:var(--paper);position:relative}
 .cover .top{font-family:'Marcellus',serif;font-size:12px;letter-spacing:.46em;color:var(--gold)}
 .cover .nm{margin-top:20px;font-family:'Italianno',cursive;font-size:64px;line-height:1.08;color:var(--wine)}
-.cover .ko{margin-top:8px;font-size:18px;letter-spacing:.3em;color:var(--ink)}
+.cover .ko{margin-top:8px;font-size:19px;font-weight:700;letter-spacing:.3em;color:var(--ink)}
 .cover .fr{margin:30px auto 0;position:relative;max-width:286px}
 .cover .fr::before{content:"";position:absolute;inset:-9px;border:1px solid var(--gold);pointer-events:none}
 .cover .fr img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.cover .dt{margin-top:34px;font-size:16px;line-height:2.1;color:var(--ink);letter-spacing:.06em}
+.cover .dt{margin-top:34px;font-size:17px;font-weight:700;line-height:2.1;color:var(--ink);letter-spacing:.06em}
 
 /* ── 인사말 ── */
 .invite{background:var(--cream);text-align:center}
@@ -112,7 +112,8 @@ section{padding:78px 30px}
 .fams .t{display:block;font-family:'Marcellus',serif;font-size:11.5px;letter-spacing:.36em;color:var(--wine);margin-bottom:7px}
 .fams b{font-size:21px;color:var(--ink);font-weight:700;letter-spacing:.08em}
 .fams .big{font-size:21px;color:var(--ink);font-weight:700;letter-spacing:.08em}
-.fams .bap{font-size:13px;color:var(--gold);margin-left:4px}
+.fams .bap{font-size:14px;font-weight:700;color:var(--forest);margin-left:4px}
+.fams .rel{font-size:17px;font-weight:700;color:var(--forest)}
 
 /* ── 날짜 ── */
 .when{text-align:center;background:var(--forest);color:var(--cream)}
@@ -141,7 +142,7 @@ section{padding:78px 30px}
 /* ── 오시는 길 ── */
 .loc{background:var(--cream)}
 .church{display:block;width:186px;height:auto;margin:6px auto 22px;color:var(--forest);opacity:.84}
-.loc .lbl-ko{font-size:13px;color:var(--ink)}
+.loc .lbl-ko{color:var(--ink)}
 .loc .nm{text-align:center;font-size:23px;font-weight:700;color:var(--forest);letter-spacing:.08em}
 .loc .sub{text-align:center;font-size:15px;color:var(--ink);margin-top:7px}
 .loc .ad{text-align:center;font-size:15.5px;color:var(--ink);margin-top:8px}
@@ -156,13 +157,14 @@ section{padding:78px 30px}
 .btn.w{grid-column:span 2;border-style:dashed}
 .ways{margin-top:38px;display:grid;gap:2px}
 .way{border-top:1px solid var(--hair);padding:19px 0 5px}
-.way h4{font-family:'Marcellus',serif;font-size:12px;letter-spacing:.3em;color:var(--wine);margin-bottom:11px}
-.way p{font-size:14.8px;line-height:2.05;color:var(--ink)}
+.way h4{font-family:'Marcellus',serif;font-size:13px;letter-spacing:.3em;color:var(--wine);margin-bottom:11px}
+.way p{font-size:15.8px;font-weight:700;line-height:2.05;color:var(--ink)}
 .way p em{font-style:normal;color:var(--forest);font-weight:700}
-.way p.n{font-size:13.6px;color:var(--ink);margin-top:5px;line-height:1.9}
+.way p.n{font-size:14.6px;font-weight:700;color:var(--ink);margin-top:5px;line-height:1.9}
 
 /* ── 계좌 ── */
 .gift{background:var(--paper)}
+.gift-note{margin-top:36px;text-align:center;font-size:17px;line-height:2.5;color:var(--ink)}
 .acc{border:1px solid var(--hair);margin-bottom:9px;background:var(--cream)}
 .acc-h{width:100%;display:flex;align-items:center;justify-content:space-between;padding:17px 18px;
   font-size:16px;letter-spacing:.1em;color:var(--forest)}
@@ -181,9 +183,9 @@ section{padding:78px 30px}
 
 /* ── 맺음 ── */
 .end{background:var(--wine2);color:var(--cream);text-align:center;padding:66px 30px 58px}
-.end .msg{font-size:15.5px;line-height:2.3;opacity:.9}
+.end .msg{font-size:17.5px;font-weight:700;line-height:2.3;opacity:.95}
 .end .msg b{color:#E8C98F;font-weight:700}
-.end .msg .sub{display:block;margin-top:10px;font-size:14.5px;opacity:.85}
+.end .msg .sub{display:block;margin-top:10px;font-size:16.5px;opacity:.9}
 .end .msg a{color:#E8C98F;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .end .msg.meal{margin-top:24px;padding-top:22px;border-top:1px solid rgba(242,234,218,.22);
   font-size:14.6px;opacity:.8;line-height:2.1}
@@ -232,8 +234,8 @@ section{padding:78px 30px}
     <div class="dv"><i></i><b></b><i></i></div>
     <p class="body" data-rv="up" data-w="greet.htmlNarrow" data-w-html></p>
     <div class="fams" data-rv="up" data-stagger="120">
-      <div><span class="t">GROOM</span><b>유환영</b><span class="bap">의</span><br>아들 <span class="big">백경대</span><span class="bap">토마스</span></div>
-      <div><span class="t">BRIDE</span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br>딸 <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
+      <div><span class="t">GROOM</span><b>유환영</b><span class="bap">의</span><br><span class="rel">아들</span> <span class="big">백경대</span><span class="bap">토마스</span></div>
+      <div><span class="t">BRIDE</span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br><span class="rel">딸</span> <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
     </div>
   </section>
 
@@ -331,6 +333,8 @@ section{padding:78px 30px}
         <p><em>창신교회 앞</em> 하차 — 144 · 350 (간선)<br><em>유원아파트</em> 하차 — 740 (간선)</p></div>
       <div class="way" data-rv="up"><h4>VILLAGE BUS</h4>
         <p>03번 신사역→교대역 : 창신교회 하차<br>03번 교대역→신사역 : 서초동성당 · 삼성레포츠 하차<br>21번 창신교회 하차 · 10번 유원아파트 하차</p></div>
+      <div class="way" data-rv="up"><h4>PARKING</h4>
+        <p data-w="parkingNote.html" data-w-html></p></div>
     </div>
   </section>
 
@@ -357,6 +361,7 @@ section{padding:78px 30px}
           <button class="c" data-copy="카카오뱅크 3333-04-6209726 김예슬" data-copy-msg="계좌번호가 복사되었습니다">COPY</button></div>
       </div></div>
     </div>
+    <p class="gift-note" data-rv="up" data-w="giftNote.html" data-w-html></p>
   </section>
 
   <footer class="end">
