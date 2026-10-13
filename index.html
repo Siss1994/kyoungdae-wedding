@@ -61,7 +61,19 @@ section{padding:78px 30px}
 /* ══ 인트로: 봉투 ══ */
 .intro{background:linear-gradient(170deg,#1C2E26,#0F1C17)}
 .env-wrap{text-align:center;padding:0 30px}
-.env{width:260px;height:174px;margin:0 auto;position:relative;perspective:900px}
+.env{width:260px;height:174px;margin:0 auto;position:relative;perspective:900px;
+  cursor:pointer;animation:envNudge 4.4s ease-in-out infinite;transform-origin:50% 85%}
+.env:active{animation:none;transform:scale(.975)}
+.intro.is-out .env{animation:none}
+@keyframes envNudge{
+  0%,84%,100%{transform:rotate(0deg) translateY(0)}
+  86.5%{transform:rotate(-2deg) translateY(-3px)}
+  89%  {transform:rotate(1.7deg) translateY(-2px)}
+  91.5%{transform:rotate(-1.2deg) translateY(-1px)}
+  94%  {transform:rotate(.7deg)}
+  96.5%{transform:rotate(-.3deg)}
+}
+@media (prefers-reduced-motion:reduce){.env{animation:none}}
 .env .body{position:absolute;inset:0;background:var(--cream);
   box-shadow:0 26px 60px rgba(0,0,0,.5)}
 .env .card{position:absolute;left:11px;right:11px;top:9px;height:142px;background:var(--paper);
@@ -113,6 +125,8 @@ section{padding:78px 30px}
 .invite .body{font-size:17px;line-height:2.5}
 .fams{margin-top:44px;display:grid;gap:22px;font-size:16px;line-height:2;color:var(--mute)}
 .fams .t{display:block;font-family:'Marcellus',serif;font-size:11.5px;letter-spacing:.36em;color:var(--wine);margin-bottom:7px}
+.fams .t i{font-family:'Nanum Myeongjo',serif;font-style:normal;font-size:11.5px;
+  letter-spacing:.04em;color:var(--mute)}
 .fams b{font-size:21px;color:var(--ink);font-weight:700;letter-spacing:.08em}
 .fams .big{font-size:21px;color:var(--ink);font-weight:700;letter-spacing:.08em}
 .fams .bap{font-size:14px;font-weight:700;color:var(--forest);margin-left:4px}
@@ -220,7 +234,7 @@ section{padding:78px 30px}
 <!-- 인트로 봉투 -->
 <div class="intro" data-intro>
   <div class="env-wrap">
-    <div class="env">
+    <div class="env" data-intro-open role="button" tabindex="0" aria-label="청첩장 열기">
       <div class="body"></div>
       <div class="card"><span class="t">Invitation</span><span class="s">BAEK &amp; KIM</span></div>
       <div class="flapL"></div><div class="flapR"></div><div class="flapB"></div>
@@ -248,8 +262,8 @@ section{padding:78px 30px}
     <div class="dv"><i></i><b></b><i></i></div>
     <p class="body" data-rv="up" data-w="greet.htmlNarrow" data-w-html></p>
     <div class="fams" data-rv="up" data-stagger="120">
-      <div><span class="t">GROOM</span><b>유환영</b><span class="bap">의</span><br><span class="rel">아들</span> <span class="big">백경대</span><span class="bap">토마스</span></div>
-      <div><span class="t">BRIDE</span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br><span class="rel">딸</span> <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
+      <div><span class="t">GROOM <i>(신랑)</i></span><b>유환영</b><span class="bap">의</span><br><span class="rel">아들</span> <span class="big">백경대</span><span class="bap">토마스</span></div>
+      <div><span class="t">BRIDE <i>(신부)</i></span><b>김영환</b><span class="bap">요셉</span> · <b>김석자</b><span class="bap">마리아</span><span class="bap">의</span><br><span class="rel">딸</span> <span class="big">김예슬</span><span class="bap">소화데레사</span></div>
     </div>
   </section>
 

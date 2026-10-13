@@ -356,9 +356,18 @@
       setTimeout(function () { intro.remove(); }, 1600);
     };
     D.body.classList.add('is-locked');
-    var btn = intro.querySelector('[data-intro-open]');
-    if (btn) btn.addEventListener('click', openIt);
-    else setTimeout(openIt, 2000);
+    // 봉투·버튼 등 열기 트리거가 여러 개일 수 있음
+    var triggers = intro.querySelectorAll('[data-intro-open]');
+    if (triggers.length) {
+      triggers.forEach(function (el) {
+        el.addEventListener('click', openIt);
+        el.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIt(); }
+        });
+      });
+    } else {
+      setTimeout(openIt, 2000);
+    }
   }
 
   /* ── 14. 공유하기 ───────────────────────────────────────── */
